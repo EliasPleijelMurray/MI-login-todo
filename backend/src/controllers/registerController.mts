@@ -2,6 +2,7 @@ import User from "../models/userSchema.mjs";
 import { InferSchemaType } from "mongoose";
 import { RegisterRequest } from "../routers/registerRouter.mjs";
 import bcrypt from "bcryptjs";
+import { UserDto } from "../models/userDto.mjs";
 
 type UserType = InferSchemaType<typeof User.schema>;
 
