@@ -1,4 +1,4 @@
-import User from "./models/userSchema.mjs";
+import User from "../models/userSchema.mjs";
 import bcrypt from "bcryptjs";
 import { convertDbUserToDto } from "./registerController.mjs";
 

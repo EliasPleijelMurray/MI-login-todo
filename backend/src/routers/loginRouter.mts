@@ -1,6 +1,6 @@
 import express from "express";
 import { Request, Response } from "express";
-import { login } from "./loginController.mjs";
+import { login } from "../controllers/loginController.mjs";
 
 export const loginRouter = express.Router();
 
