@@ -1,7 +1,7 @@
 import express from "express";
 import { createUser } from "../controllers/registerController.mjs";
 
-export const registerRouter = express.Router;
+export const registerRouter = express.Router();
 
 export type RegisterRequest = {
   name: string;
