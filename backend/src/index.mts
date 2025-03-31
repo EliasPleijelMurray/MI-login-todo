@@ -1,7 +1,11 @@
 import express, { json } from "express";
 import dotenv from "dotenv";
 import mongoose from "mongoose";
+
 import { registerRouter } from "./routers/registerRouter.mjs";
+
+import { auth } from "./middlewares/auth.mjs";
+
 
 dotenv.config();
 
@@ -22,6 +26,7 @@ app.get("/", (req, res) => {
 
 app.use("/register", registerRouter);
 app.use("/login", loginRouter);
+app.use(auth);
 
 app.listen(port, async (error) => {
   await mongoose.connect(dbUrl);
