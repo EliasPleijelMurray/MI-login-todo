@@ -1,11 +1,11 @@
 import express, { json } from "express";
 import dotenv from "dotenv";
 import mongoose from "mongoose";
+import { loginRouter } from "./routers/loginRouter.mjs";
 
 import { registerRouter } from "./routers/registerRouter.mjs";
 
 import { auth } from "./middlewares/auth.mjs";
-
 
 dotenv.config();
 
