@@ -6,13 +6,13 @@ import Jwt from "jsonwebtoken";
 export const loginRouter = express.Router();
 
 loginRouter.post("/", async (req: Request, res: Response) => {
-    const { email, password } = req.body;
+  const { email, password } = req.body;
 
-    try {
-        if (!email || !password) {
-            res.status(400).json({ message: "missing email or password in body" });
-        } else {
-            const loggedInUser = await login(email, password);
+  try {
+    if (!email || !password) {
+      res.status(400).json({ message: "missing email or password in body" });
+    } else {
+      const loggedInUser = await login(email, password);
 
             if (!loggedInUser) {
                 res.status(400).json({ message: "incorrect email or password" });
