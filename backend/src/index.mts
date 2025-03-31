@@ -3,14 +3,17 @@ import dotenv from "dotenv";
 import mongoose from "mongoose";
 import { createTodoRouter } from "./routers/createTodoRouter.mjs";
 import { loginRouter } from "./routers/loginRouter.mjs";
-
 import { registerRouter } from "./routers/registerRouter.mjs";
-
 import { auth } from "./middlewares/auth.mjs";
+import cookieParser from "cookie-parser";
+import cors from "cors";
 
 dotenv.config();
 
 const app = express();
+app.use(cors());
+app.use(cookieParser());
+
 const port = process.env.PORT || 3000;
 const dbUrl = process.env.dbURL;
 
