@@ -7,7 +7,6 @@ import { registerRouter } from "./routers/registerRouter.mjs";
 
 import { auth } from "./middlewares/auth.mjs";
 
-
 dotenv.config();
 
 const app = express();
