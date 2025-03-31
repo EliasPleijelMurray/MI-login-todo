@@ -1,7 +1,7 @@
 import express, { json } from "express";
 import dotenv from "dotenv";
 import mongoose from "mongoose";
-import { createTodoRouter } from "./routers/createTodoRouter.mjs";
+import { todosRouter } from "./routers/createTodoRouter.mjs";
 import { loginRouter } from "./routers/loginRouter.mjs";
 
 import { registerRouter } from "./routers/registerRouter.mjs";
@@ -27,7 +27,7 @@ app.get("/", (req, res) => {
 
 app.use("/register", registerRouter);
 app.use("/login", loginRouter);
-app.use("/createTodo", createTodoRouter);
+app.use("/todos", todosRouter);
 app.use(auth);
 
 app.listen(port, async (error) => {
