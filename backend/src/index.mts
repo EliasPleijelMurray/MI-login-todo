@@ -1,6 +1,7 @@
 import express, { json } from "express";
 import dotenv from "dotenv";
 import mongoose from "mongoose";
+import { loginRouter } from "./loginRouter.mjs";
 
 dotenv.config();
 
