@@ -1,6 +1,7 @@
 import express, { json } from "express";
 import dotenv from "dotenv";
 import mongoose from "mongoose";
+import { registerRouter } from "./routers/registerRouter.mjs";
 
 dotenv.config();
 
