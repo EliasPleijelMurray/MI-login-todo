@@ -14,20 +14,19 @@ loginRouter.post("/", async (req: Request, res: Response) => {
     } else {
       const loggedInUser = await login(email, password);
 
-            if (!loggedInUser) {
-                res.status(400).json({ message: "incorrect email or password" });
-            } else {
-                const token = Jwt.sign(loggedInUser, "my-secret");
+      if (!loggedInUser) {
+        res.status(400).json({ message: "incorrect email or password" });
+      } else {
+        const token = Jwt.sign(loggedInUser, "my-secret");
 
-                const currentDate = new Date();
-                currentDate.setMinutes(currentDate.getMinutes() + 1);
+        const currentDate = new Date();
+        currentDate.setMinutes(currentDate.getMinutes() + 1);
 
-                res.cookie("login", token, { expires:currentDate });
-                res.status(200).json(loggedInUser);
-            }
-        }
-        
-    } catch (error: any) {
-        res.status(500).json(error.message)
+        res.cookie("login", token, { expires: currentDate });
+        res.status(200).json(loggedInUser);
+      }
     }
-})
+  } catch (error: any) {
+    res.status(500).json(error.message);
+  }
+});
