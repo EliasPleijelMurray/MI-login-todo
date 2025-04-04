@@ -16,7 +16,7 @@ createTodoRouter.post("/", async (req: Request, res: Response) => {
     if (!text) {
       res.status(400).send("Missing text in task");
     } else {
-      const newTodo = await createTodo(text);
+      const newTodo = await createTodo(text, req, res);
       res.status(200).json(newTodo);
     }
   } catch (error: any) {

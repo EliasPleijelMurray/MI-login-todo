@@ -5,6 +5,7 @@ import { createTodoRouter } from "./routers/createTodoRouter.mjs";
 import { loginRouter } from "./routers/loginRouter.mjs";
 import { registerRouter } from "./routers/registerRouter.mjs";
 import { auth } from "./middlewares/auth.mjs";
+import cookieParser from "cookie-parser";
 
 dotenv.config();
 
