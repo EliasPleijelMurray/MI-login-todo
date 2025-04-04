@@ -13,6 +13,6 @@ loginButton?.addEventListener("click", () => {
 });
 
 document.getElementById("todo-button")?.addEventListener("click", async () => {
-  const response: Todos = await axios.get("htttp/localhost:3000/getTodos");
-  const todos = response;
+  const response = await axios.get("htttp/localhost:3000/getTodos");
+  const todos: Todos = response.data;
 });
