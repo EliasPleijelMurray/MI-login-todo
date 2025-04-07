@@ -6,6 +6,7 @@ import { loginRouter } from "./routers/loginRouter.mjs";
 import { registerRouter } from "./routers/registerRouter.mjs";
 import { auth } from "./middlewares/auth.mjs";
 import cookieParser from "cookie-parser";
+import { getTodoRouter } from "./routers/getTodoRouter.mjs";
 
 dotenv.config();
 
@@ -26,8 +27,9 @@ app.get("/", (req, res) => {
 
 app.use("/register", registerRouter);
 app.use("/login", loginRouter);
-app.use("/createTodo", createTodoRouter);
 app.use(auth);
+app.use("/createTodo", createTodoRouter);
+app.use("/getTotdo", getTodoRouter);
 
 app.listen(port, async (error) => {
   await mongoose.connect(dbUrl);
